@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  verdaccio-service:
+    image: verdaccio/verdaccio
+    network_mode: bridge
+    ports:
+      - "4873:4873"
+    expose:
+      - 4873
+    volumes:
+      - ./verdaccio/conf:/verdaccio/conf:Z
+      - ./verdaccio/storage:/verdaccio/storage:Z
+      - ./verdaccio/plugins:/verdaccio/plugins:Z
