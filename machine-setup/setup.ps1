@@ -19,7 +19,9 @@ function executeScript {
 }
 
 
+write-host "meep0"
 executeScript "WindowsSetup.ps1";
+write-host "meep"
 executeScript "RemoveDefaultApps.ps1";
 # executeScript "InstallWSL.ps1";
 # executeScript "InstallPackages.ps1";
