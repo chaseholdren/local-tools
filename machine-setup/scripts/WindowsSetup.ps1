@@ -17,11 +17,13 @@ Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtec
 
 # Make Registry backup
 mkdir "C:\RegBack"
-reg export HKCR C:\RegBack\HKCR.Reg /y
-reg export HKCU C:\RegBack\HKCU.Reg /y
-reg export HKLM C:\RegBack\HKLM.Reg /y
-reg export HKU C:\RegBack\HKU.Reg /y
-reg export HKCC C:\RegBackHKCC.Reg /y
+$timestamp = $(get-date -f yyyy-MM-dd)
+mkdir "C:\RegBack\$timestamp"
+reg export HKCR C:\RegBack\$timestamp\HKCR.Reg /y
+reg export HKCU C:\RegBack\$timestamp\HKCU.Reg /y
+reg export HKLM C:\RegBack\$timestamp\HKLM.Reg /y
+reg export HKU C:\RegBack\$timestamp\HKU.Reg /y
+reg export HKCC C:\RegBack\$timestamp\HKCC.Reg /y
 
 # https://blog.netwrix.com/2018/09/11/how-to-get-edit-create-and-delete-registry-keys-with-powershell/
 
