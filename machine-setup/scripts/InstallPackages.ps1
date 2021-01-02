@@ -1,13 +1,3 @@
-# WSL
-choco install -y Microsoft-Windows-Subsystem-Linux --source="'windowsfeatures'"
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
-Add-AppxPackage -Path ~/Ubuntu.appx
-# run the distro once and have it install locally with root user, unset password
-RefreshEnv
-Ubuntu1804 install --root
-Ubuntu1804 run apt update
-Ubuntu1804 run apt upgrade -y
-
 # Dev Tools
 choco install chocolatey
 choco install jetbrainstoolbox
@@ -51,3 +41,13 @@ choco install -y visualstudio2017buildtools
 choco install -y visualstudio2017-workload-vctools
 choco install -y python2 # Node.js requires Python 2 to build native modules
 choco install -y python
+
+# WSL
+choco install -y Microsoft-Windows-Subsystem-Linux --source="'windowsfeatures'"
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu.appx -UseBasicParsing
+Add-AppxPackage -Path ~/Ubuntu.appx
+# run the distro once and have it install locally with root user, unset password
+RefreshEnv
+Ubuntu1804 install --root
+Ubuntu1804 run apt update
+Ubuntu1804 run apt upgrade -y
