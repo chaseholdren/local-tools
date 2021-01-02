@@ -4,13 +4,18 @@ Set-TaskbarSmall
 Disable-GameBarTips
 
 Set-BoxstarterTaskbarOptions -Size Small -Dock Top -Combine Always -AlwaysShowIconsOn -MultiMonitorOn -MultiMonitorMode All -MultiMonitorCombine Always
+write-host "hi"
 
 #--- Enable developer mode on the system ---
 Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense -Value 1
 
+write-host "hi2"
+
 #--- Windows Features ---
 # Show hidden files, Show protected OS files, Show file extensions
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess
+
+write-host "hi3"
 
 # Make Registry backup
 mkdir "C:\RegBack"
@@ -19,6 +24,8 @@ reg export HKCU C:\RegBack\HKCU.Reg /y
 reg export HKLM C:\RegBack\HKLM.Reg /y
 reg export HKU C:\RegBack\HKU.Reg /y
 reg export HKCC C:\RegBackHKCC.Reg /y
+
+write-host "hi4"
 
 # https://blog.netwrix.com/2018/09/11/how-to-get-edit-create-and-delete-registry-keys-with-powershell/
 
