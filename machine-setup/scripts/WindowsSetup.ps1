@@ -3,8 +3,8 @@ Install-WindowsUpdate -acceptEula
 Set-TaskbarSmall
 Disable-GameBarTips
 
-write-host "hi0"
-Set-BoxstarterTaskbarOptions -Size Small -Dock Top -Combine Always -AlwaysShowIconsOn -MultiMonitorOn -MultiMonitorMode All -MultiMonitorCombine Always
+write-host "hi"
+# Set-BoxstarterTaskbarOptions -Size Small -Dock Top -Combine Always -AlwaysShowIconsOn -MultiMonitorOn -MultiMonitorMode All -MultiMonitorCombine Always
 write-host "hi"
 
 #--- Enable developer mode on the system ---
