@@ -19,8 +19,8 @@ function executeScript {
 }
 
 executeScript "RemoveDefaultApps.ps1";
-executeScript "WindowsSetup.ps1";
-executeScript "InstallPackages.ps1";
+# executeScript "WindowsSetup.ps1";
+# executeScript "InstallPackages.ps1";
 # executeScript "InstallDocker.ps1";
 
 # checkout my repo's
