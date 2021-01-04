@@ -5,11 +5,12 @@ choco install firacode
 choco install azure-cli
 choco install gcloudsdk
 choco install microsoft-windows-terminal
-choco install -y vscode
-choco install -y vscode-powershell
-choco install -y vscode-docker
+choco install vscode.portable
+RefreshEnv
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension msjsdiag.debugger-for-edge
+code --install-extension ms-vscode.powershell
+code --install-extension ms-azuretools.vscode-docker
 choco install github-desktop
 choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
 choco install git-credential-manager-for-windows
