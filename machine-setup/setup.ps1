@@ -15,11 +15,11 @@ write-host "helper script base URI is $helperUri"
 function executeScript {
     Param ([string]$script)
     write-host "executing $helperUri/$script ..."
-	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
+    iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
 executeScript "RemoveDefaultApps.ps1";
-# executeScript "WindowsSetup.ps1";
+executeScript "WindowsSetup.ps1";
 executeScript "InstallPackages.ps1";
 # executeScript "InstallDocker.ps1";
 
