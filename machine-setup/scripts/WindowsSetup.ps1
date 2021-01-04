@@ -25,6 +25,13 @@ reg export HKLM C:\RegBack\$timestamp\HKLM.Reg /y
 reg export HKU C:\RegBack\$timestamp\HKU.Reg /y
 reg export HKCC C:\RegBack\$timestamp\HKCC.Reg /y
 
+
+reg export HKCR HKCR.Reg /y
+reg export HKCU HKCU.Reg /y
+reg export HKLM HKLM.Reg /y
+reg export HKU HKU.Reg /y
+reg export HKCC HKCC.Reg /y
+
 # https://blog.netwrix.com/2018/09/11/how-to-get-edit-create-and-delete-registry-keys-with-powershell/
 
 #--- File Explorer Settings ---
@@ -40,7 +47,7 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 # Turn off system sounds
 # https://superuser.com/a/1397681
 Set-ItemProperty -Path "HKCU:\AppEvents\Schemes" -Name "(Default)" -Value ".None"
-Get-ChildItem -Path "HKCU:\AppEvents\Schemes\Apps" | Get-ChildItem | Get-ChildItem | Where-Object {$_.PSChildName -eq ".Current"} | Set-ItemProperty -Name "(Default)" -Value ""
+Get-ChildItem -Path "HKCU:\AppEvents\Schemes\Apps" | Get-ChildItem | Get-ChildItem | Where-Object { $_.PSChildName -eq ".Current" } | Set-ItemProperty -Name "(Default)" -Value ""
 
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value "0"
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value "0"
