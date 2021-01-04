@@ -19,15 +19,15 @@ function executeScript {
 }
 
 executeScript "RemoveDefaultApps.ps1";
-executeScript "WindowsSetup.ps1";
+# executeScript "WindowsSetup.ps1";
 executeScript "InstallPackages.ps1";
-executeScript "InstallDocker.ps1";
+# executeScript "InstallDocker.ps1";
 
 # checkout my repo's
-cd ~
-mkdir Code
-cd Code
-git.exe clone https://github.com/chaseholdren/local-tools
+# cd ~
+# mkdir Code
+# cd Code
+# git.exe clone https://github.com/chaseholdren/local-tools
 
 # # set desktop wallpaper
 # Invoke-WebRequest -Uri 'http://chocolateyfest.com/wp-content/uploads/2018/05/img-bg-front-page-header-NO_logo-opt.jpg' -Method Get -ContentType image/jpeg -OutFile 'C:\github\chocofest.jpg'
