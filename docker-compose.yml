@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  reverse-proxy:
+    container_name: reverse-proxy
+    hostname: reverse-proxy
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - type: bind
+        source: ./reverse-proxy/nginx-config
+        target: /etc/nginx
+      - type: bind
+        source: ./reverse-proxy/ssl
+        target: /etc/ssl/private
+  verdaccio-service:
+    image: verdaccio/verdaccio
+    network_mode: bridge
+    ports:
+      - "4873:4873"
+    expose:
+      - 4873
+    volumes:
+      - ./verdaccio/conf:/verdaccio/conf:Z
+      - ./verdaccio/storage:/verdaccio/storage:Z
+      - ./verdaccio/plugins:/verdaccio/plugins:Z
