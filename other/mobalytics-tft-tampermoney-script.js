@@ -9,30 +9,47 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
-  "use strict";
+// var refreshIntervalId = setInterval(clearPage, 1000);
 
-  var refreshIntervalId = setInterval(clearPage, 1000);
+// function clearPage() {
+//   const elements = document.querySelectorAll(".e1gbtzi60, .ehk3y7t1");
 
-  function clearPage() {
-    const elements = document.querySelectorAll(".e1gbtzi60, .ehk3y7t1");
+//   console.log(1);
 
-    console.log(1);
+//   if (elements.length === 0) return;
 
-    if (elements.length === 0) return;
+//   // clearInterval(refreshIntervalId);
 
-    // clearInterval(refreshIntervalId);
+//   for (const element of elements) {
+//     element.remove();
+//   }
+// }
 
-    for (const element of elements) {
-      element.remove();
-    }
+addCssScript(`
+  .css-q70a0o img {
   }
+  .ehk3y7t1 {
+    display: none;
+  }
+  .e1gbtzi60 {
+    display: none;
+  }
+  .css-8ezmd7.enl0bsh10 {
+      display: flex;
+      flex-direction: column;
+  }
+`);
 
-  //   var style = document.createElement('style');
-  //    style.innerHTML = `
-  //  .e1gbtzi60, .ehk3y7t1 {
-  //  display: none;
-  //  }
-  //  `;
-  //    document.head.appendChild(style);
-})();
+function addCssScript(cssString) {
+  var style = document.createElement("style");
+  style.innerHTML = cssString;
+  document.head.appendChild(style);
+}
+
+function moveLevelingGuide() {
+  const levelingGuideElement =
+    document.querySelectorAll(".enl0bsh10")[0].children[1];
+
+  levelingGuideElement.style.order = 4;
+}
+setInterval(moveLevelingGuide, 1000);
