@@ -38,6 +38,11 @@ addCssScript(`
       display: flex;
       flex-direction: column;
   }
+
+  .css-1dw2zw span>img {
+      width: 45px;
+      height: 45px;
+  }
 `);
 
 function addCssScript(cssString) {
@@ -52,4 +57,11 @@ function moveLevelingGuide() {
 
   levelingGuideElement.style.order = 4;
 }
-setInterval(moveLevelingGuide, 1000);
+
+function loop() {
+  try {
+    moveLevelingGuide();
+  } catch (error) {}
+}
+
+setInterval(loop, 1000);
